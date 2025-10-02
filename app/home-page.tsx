@@ -1,6 +1,7 @@
+"use client";
 import React from "react";
 
-function Home() {
+export default function HomePage() {
   return (
     <>
       <style>{`
@@ -12,7 +13,6 @@ function Home() {
         .video-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; pointer-events: none; }
         .logo-container { width: 450px; height: 450px; }
         .logo-container img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15)); }
-        .video-caption { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: #ffffff; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); letter-spacing: 1px; }
         
         .promo-cards { max-width: 900px; margin: -50px auto 16px; padding: 0 16px; position: relative; z-index: 2; }
         .promo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -20,7 +20,6 @@ function Home() {
         .promo-media { width: 100%; aspect-ratio: 1/1; background: #eef2ee; position: relative; }
         .promo-media::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(255,255,255,0) 55%, rgba(0,0,0,0.12) 100%); pointer-events: none; }
         .promo-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        @media (max-width: 960px) { .promo-cards { margin: -36px auto 12px; padding: 0 16px; } .promo-grid { grid-template-columns: 1fr; } }
         
         .about-wrap { max-width: 1400px; margin: 40px auto; padding: 60px 60px 0; }
         .about-section { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: 40px; margin: 40px 0; }
@@ -88,6 +87,7 @@ function Home() {
         }
         
         @media (max-width: 640px) {
+          .promo-grid { grid-template-columns: 1fr; }
           .features-grid { grid-template-columns: 1fr; }
           .cup-feature { gap: 20px; }
           .cup-image { width: 280px; height: 280px; }
@@ -104,7 +104,7 @@ function Home() {
           </video>
           <div className="video-overlay">
             <div className="logo-container">
-              <img src="/logo001.png" alt="Maria Ue Logo" onError={(e) => {e.target.style.display='none';}} />
+              <img src="/logo001.png" alt="Maria Ue Logo" onError={(e: any) => {e.target.style.display='none';}} />
             </div>
           </div>
         </div>
@@ -112,9 +112,9 @@ function Home() {
         {/* Promo */}
         <div className="promo-cards">
           <div className="promo-grid">
-            <div className="promo-card"><div className="promo-media"><img src="/pros1.jpg?v=1" alt="Promo 1" onError={(e)=>{e.currentTarget.style.display='none';}} /></div></div>
-            <div className="promo-card"><div className="promo-media"><img src="/pros2.jpg?v=1" alt="Promo 2" onError={(e)=>{e.currentTarget.style.display='none';}} /></div></div>
-            <div className="promo-card"><div className="promo-media"><img src="/pros3.jpg?v=1" alt="Promo 3" onError={(e)=>{e.currentTarget.style.display='none';}} /></div></div>
+            <div className="promo-card"><div className="promo-media"><img src="/pros1.jpg?v=1" alt="Promo 1" onError={(e: any)=>{e.currentTarget.style.display='none';}} /></div></div>
+            <div className="promo-card"><div className="promo-media"><img src="/pros2.jpg?v=1" alt="Promo 2" onError={(e: any)=>{e.currentTarget.style.display='none';}} /></div></div>
+            <div className="promo-card"><div className="promo-media"><img src="/pros3.jpg?v=1" alt="Promo 3" onError={(e: any)=>{e.currentTarget.style.display='none';}} /></div></div>
           </div>
         </div>
 
@@ -162,7 +162,7 @@ function Home() {
           <div className="cup-col">
             <p>Open daily—dialed-in extractions, seasonal pastries, and a seat for you. Freshly ground beans, careful pours, and comfort in every cup.</p>
           </div>
-          <div className="cup-image"><img src="/coffee1.png" alt="coffee1" onError={(e)=>{e.currentTarget.style.display='none';}} /></div>
+          <div className="cup-image"><img src="/coffee1.png" alt="coffee1" onError={(e: any)=>{e.currentTarget.style.display='none';}} /></div>
           <div className="cup-col"><p>Ask our baristas about limited beans and sweet pairings to match. Take a moment—this is your quiet pause.</p></div>
         </div>
         <div className="cup-actions">
@@ -228,5 +228,3 @@ function Home() {
     </>
   );
 }
-
-export default Home;
